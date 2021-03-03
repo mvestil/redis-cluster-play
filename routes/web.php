@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    \Illuminate\Support\Facades\Redis::set(random_bytes(5));
+    $random = \Illuminate\Support\Str::random();
+    \Illuminate\Support\Facades\Redis::set($random, $random);
 });
